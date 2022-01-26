@@ -15,6 +15,7 @@
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.js"></script>
   </head>
   <body>
     <div class="reveal">
@@ -53,10 +54,10 @@
 							<code data-trim data-noescape>
 								const path = require('path');
 								module.exports = {
-									entry: "./app/entry.js",
+									entry: './app/entry.js',
 									output: {
-										path:path.resolve(__dirname, "dist"),
-										filename: "bundle.js",
+										path:path.resolve(__dirname, 'dist'),
+										filename: 'bundle.js',
 									}
 							
 							$ npm i -g npm
@@ -67,6 +68,58 @@
 							&lt;script src="bundle.js"&gt;&lt;/script&gt;
 						</code>
 						</pre>
+          </section>
+        </section>
+        <section>
+          <section>Collection Methods</section>
+          <section>
+            <p style="font-size: 85px">_.forEach (_.each)</p>
+            <pre>
+              <code data-trim data-noescape>
+              const arr = [1, 2, 3, 4, 5]
+
+              _.forEach(arr, x => x == 3 ? false : console.log(x))
+              => 1
+              => 2
+              => 3
+              => [1, 2, 3, 4, 5]
+
+              arr.forEach(x => x == 3 ? false : console.log(x))
+              => 1
+              => 2
+              => 3
+              => 4
+              => 5
+              => undefined
+              </code>
+            </pre>
+          </section>
+          <section>
+            <p style="font-size: 85px">_.map</p>
+            <pre>
+              <code data-trim data-noescape>
+              const arr = [{name: 'Andrei'}, {name: 'Vlad'}, {name: 'Kirill'}]
+
+              _.map(arr, 'name')
+              => ['Andrei', 'Vlad', 'Kirill']
+
+              arr.map(x => x.name)
+              => ['Andrei', 'Vlad', 'Kirill']
+              </code>
+            </pre>
+          </section>
+          <section>
+            <p style="font-size: 85px">_.groupBy</p>
+            <pre>
+              <code data-trim data-noescape>
+                _.groupBy([6.1, 4.2, 6.3], Math.floor);
+                // => { '4': [4.2], '6': [6.1, 6.3] }
+                 
+                // The `_.property` iteratee shorthand.
+                _.groupBy(['one', 'two', 'three'], 'length');
+                // => { '3': ['one', 'two'], '5': ['three'] }
+              </code>
+            </pre>
           </section>
         </section>
       </div>
