@@ -30,10 +30,41 @@
         <section>
           <section>Installation</section>
           <section>
-            <p>1. In a browser</p>
+            <p>Local copy</p>
             <pre>
 							<code data-trim data-noescape>
-								&lt;script&gt; src="lodash.js">&lt;/script&gt;;
+								&lt;script src="lodash.js"&gt;&lt;/script&gt;
+						</code>
+						</pre>
+          </section>
+          <section>
+            <p>CDN link</p>
+            <pre>
+							<code data-trim data-noescape>
+								&lt;script
+								 src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.js"&gt;
+								&lt;/script&gt;
+						</code>
+						</pre>
+          </section>
+          <section>
+            <p>Webpack</p>
+            <pre>
+							<code data-trim data-noescape>
+								const path = require('path');
+								module.exports = {
+									entry: "./app/entry.js",
+									output: {
+										path:path.resolve(__dirname, "dist"),
+										filename: "bundle.js",
+									}
+							
+							$ npm i -g npm
+							$ npm i --save lodash
+
+							let _ = require('lodash');
+
+							&lt;script src="bundle.js"&gt;&lt;/script&gt;
 						</code>
 						</pre>
           </section>
